@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Calci</title>
+    <style>
+         body{
+            background-color:rgba(217, 243, 245, 0.487);
+        } 
+        .main{
+            margin: auto;
+            text-align: center;
+            font-weight: bolder;
+            font-style: italic;
+            font-size: 20px;
+            align-items: center;
+            color: black;
+            border: 8px solid rgb(19, 64, 77);
+            height: 200px;
+            width: 900px;
+            /* background-image: url(img/back.10.gif.crdownload);   */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+    <h1>Calculator</h1>
+    <input type="number" id="first" name="first" step="any" />
+    <select id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">x</option>
+        <option value="%">%</option>
+        </select>
+    <input type="number" name="second" id="second" step="any" />
+    <br>
+    <br>
+    <button onclick="cal()">=</button>
+    <input type="text" name="" id="res" readonly="" />
+    </div>
+    </body>
+    <script type="text/javascript">
+        function cal(){
+        var opr1 = document.getElementById('first').value;
+        var opr2 = document.getElementById('second').value;
+        var ope  = document.getElementById('ope').value;
+         if(ope == '+'){
+            var res = parseInt(opr1) + parseInt(opr2);
+         }
+         if(ope == '-'){
+             var res = parseInt(opr1) - parseInt(opr2);
+         }
+         if(ope == '/'){
+             var res = parseInt(opr1) / parseInt(opr2);
+    
+         }
+         if(ope == '*'){
+            var res = parseInt(opr1) * parseInt(opr2);
+    
+         }
+         if(ope == '%'){
+            var res = parseFloat(opr1/100)*parseFloat(opr2);
+    
+         }
+         document.getElementById('res').value = res;
+        
+        }
+    </script>
+    </html>
